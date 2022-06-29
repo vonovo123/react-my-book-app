@@ -79,9 +79,7 @@ function* addBookSaga(action: Action<BookReqType>) {
 function* deleteBookSaga(action: Action<number>) {
   try {
     yield put(pending());
-    const token: string = yield select((state) => state.auth.token);
     const bookId = action.payload;
-    const book: BookType = yield call(BookService.deleteBook, token, bookId);
     const books: BookType[] = yield select((state) => state.books.books);
     yield put(success(books.filter((book) => book.bookId !== bookId)));
   } catch (error: any) {
