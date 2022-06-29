@@ -18,7 +18,7 @@ export default function AddContainer() {
   const logout = useCallback(() => {
     console.log("add logout");
     dispatch(logoutSagaStart({ navigate }));
-  }, [dispatch]);
+  }, [dispatch, navigate]);
   const add = useCallback(
     (book: BookReqType) => {
       dispatch(addBookSagaStart(book));

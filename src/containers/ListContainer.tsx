@@ -25,7 +25,7 @@ export default function ListContainer() {
   const dispatch = useDispatch();
   const logout = useCallback(() => {
     dispatch(logoutSagaStart({ navigate }));
-  }, [dispatch]);
+  }, [dispatch, navigate]);
   const goAdd = useCallback(() => {
     navigate("/add");
   }, [navigate]);
